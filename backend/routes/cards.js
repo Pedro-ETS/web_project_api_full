@@ -31,6 +31,7 @@ router.post("/",celebrate({
     headers: authHeaderSchema,
   })
 }), createCard);
+
 router.put("/:cardId/likes", celebrate({
   params: Joi.object().keys({
     cardId: Joi.string().alphanum().length(24).required(),
@@ -38,6 +39,7 @@ router.put("/:cardId/likes", celebrate({
   }),
   headers: authHeaderSchema,
 }),likeCard);
+
 router.delete("/:cardId/likes", celebrate({
   params: Joi.object().keys({
     cardId: Joi.string().alphanum().length(24).required(),
