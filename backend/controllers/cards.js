@@ -45,10 +45,11 @@ module.exports.deleteCard = async (req, res, next) => {
   }
 };
 module.exports.likeCard = async (req, res, next) => {
+  const { _id, name, about, avatar, email } = req.body;
   try {
     const updatedCard = await cardModel.findByIdAndUpdate(
       req.params.cardId,
-      { $addToSet: { likes: req.user._id } },
+      { $addToSet: { likes: {_id, name, about, avatar, email }} },
       { new: true }
     );
     res.send({ data: updatedCard });
@@ -56,14 +57,13 @@ module.exports.likeCard = async (req, res, next) => {
     next(error);
   }
 };
-
 module.exports.dislikeCard = async (req, res, next) => {
   const cardId = req.params.cardId;
-  const userId = req.user._id;
+  const _id = req.user._id;
   try {
     const updatedCard = await cardModel.findByIdAndUpdate(
       cardId,
-      { $pull: { likes: userId } },
+      { $pull: { likes: { _id: _id }} },
       { new: true }
     );
     if (!updatedCard) {
