@@ -69,7 +69,7 @@ module.exports.dislikeCard = async (req, res, next) => {
     if (!updatedCard) {
       return res.status(HttpStatus.NOT_FOUND).send({ error: 'Tarjeta no encontrada' });
     }
-    res.send (updatedCard);
+    res.send ({ data: updatedCard });
   } catch (error) {
     next(error);
   }
