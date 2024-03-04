@@ -11,7 +11,7 @@ const usersRouter = require("./routes/users");
 const cardsRouter = require("./routes/cards");
 const { HttpStatus, HttpResponseMessage } = require("./enums/http");
 const { requestLogger, errorLogger } = require("./middleware/logger");
-
+console.log(process.env.NODE_ENV);
 const validateURL = (value, helpers) => {
   if (validator.isURL(value)) {
     return value;
@@ -27,7 +27,12 @@ mongoose.connect("mongodb://localhost:27017/aroundb", {
 app.use(express.json());
 app.use(cors());
 app.options('*', cors());
-app.use(requestLogger); //logger de solicitud
+app.use(requestLogger);
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('El servidor va a caer');
+  }, 0);
+});
 app.post(
   "/signin",
   celebrate({
