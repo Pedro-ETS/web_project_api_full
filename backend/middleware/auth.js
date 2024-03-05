@@ -1,5 +1,7 @@
 const jwt = require('jsonwebtoken');
 const { HttpStatus } = require("../enums/http");
+require('dotenv').config();
+const { NODE_ENV, JWT_SECRET } = process.env;
 
 const handleAuthError = (res) => {
   res
@@ -25,7 +27,7 @@ module.exports = (req, res, next) => {
   let payload;
 
   try {
-    payload = jwt.verify(token, 'super-strong-secret');
+    payload = jwt.verify(token, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret');
   } catch (err) {
     return handleAuthError(res);
   }

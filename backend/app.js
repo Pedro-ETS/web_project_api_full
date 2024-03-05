@@ -75,7 +75,7 @@ app.use((err, req, res, next) => {
       statusCode === 500 ? "Se ha producido un error en el servidor" : message,
   });
 });
-const { PORT = 3000 } = process.env;
+const { PORT = 3001 } = process.env;
 app.listen(PORT, () => {
   console.log(`App listening at port ${PORT}`);
 });
