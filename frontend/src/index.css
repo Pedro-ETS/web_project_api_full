@@ -56,21 +56,25 @@
 @import url("./blocks/popup/__input-error/popup__input-error.css");
 @import url("./blocks/add-button/add-button.css");
 @import url("./blocks/edit-button/edit-button.css");
+
 @import url("./blocks/popup-add/popup-add.css");
 @import url("./blocks/popup-add/__container/popup-add__container.css");
 @import url("./blocks/popup-add/__title/popup-add__title.css");
 @import url("./blocks/popup-add/__input/popup-add__input.css");
 @import url("./blocks/popup-add/__input-error/popup-add__input-error.css");
-@import url("./blocks/popup-add/__save/popup-add__btn-save.css");
+@import url("./blocks/popup-add/__save/popup-add__btn-save.css");   
 @import url("./blocks/popup-add/__close/popup-add__close.css");
 @import url("./blocks/popup-add/__save/_disabled/popup-add__btn-save_disabled.css");
+
+
 @import url("./blocks/big-picture/big-picture.css");
 @import url("./blocks/big-picture/__content/big-picture__content.css");
 @import url("./blocks/big-picture/__lugar/big-picture__lugar.css");
 @import url("./blocks/big-picture/__image-normal/big-picture__image-normal.css");
 @import url("./blocks/big-picture/__btn-close/big-picture__btn-close.css");
-@import url("./blocks/footer/footer.css");
+@import url("./blocks/footer/footer.css");   
 @import url("./blocks/footer/__copyright/footer__copyright.css");
+
 @import url("./blocks/popup-edit-Img/popup-edit-img.css");
 @import url("./blocks/popup-edit-Img/__container/popup-edit-img__container.css");
 @import url("./blocks/popup-edit-Img/__title/popup-edit-img__title.css");
@@ -79,6 +83,7 @@
 @import url("./blocks/popup-edit-Img/__save/_disabled/popup-edit-img__btn-save_disabled.css");
 @import url("./blocks/popup-edit-Img/__input-error/popup-edit-img__input-error.css");
 @import url("./blocks/popup-edit-Img/__btn-close/popup-edit-img__btn-close.css");
+
 @import url("./blocks/popup-confirm-deletion/popup-confirm-deletion.css");
 @import url("./blocks/popup-confirm-deletion/__container/popup-confirm-deletion__container.css");
 @import url("./blocks/popup-confirm-deletion/__title/popup-confirm-deletion__title.css");
